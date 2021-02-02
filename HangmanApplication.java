@@ -1,13 +1,19 @@
 import java.io.*;
 import java.util.Scanner;
-
+/**
+ * 
+ * @author Keegan Henderson
+ * @version 2.0 with javadocs
+ *
+ *this is the main method and utilises the methods within HangmanClass to play the game.
+ */
 public class HangmanApplication {
 
 	public static void main(String[] args) throws IOException{
 		HangmanClass Hangman = new HangmanClass();
 		Scanner input = new Scanner(System.in);
 		boolean playAgain = true;
-		String again; 
+		String again = ""; 
 		
 		Hangman.loadWL();
 		
@@ -22,7 +28,7 @@ public class HangmanApplication {
 				playAgain = false;
 				System.out.println("YOU HAVE COMPELTED THE GAME!");
 			}
-			input.close();
+			
 		}
 		
 		Hangman.writeWL();

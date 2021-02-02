@@ -1,6 +1,13 @@
 import java.util.Scanner;
 import java.io.*;
 
+/** 
+ * 
+ * @author Keegan Henderson
+ * @version 2.0 with javadocs
+ * 
+ * This class is the meat of the program with various methods and including the game loop
+ */
 public class HangmanClass {
 	Scanner input = new Scanner(System.in);
 	Dictionary Dict = new Dictionary();
@@ -13,6 +20,9 @@ public class HangmanClass {
 	HangmanClass(){
 	}//end constructor
 	
+	/**
+	 * loadWL loads the win loss integer values into the program
+	 */
 	public void loadWL() {
 		try {
 			File WinLoss = new File("WinLoss.txt");
@@ -32,6 +42,11 @@ public class HangmanClass {
 		
 	}//end loadWL method
 	
+	
+	/**
+	 * writeWL writes the win loss to the WinLoss.txt 
+	 * @throws IOException
+	 */
 	public void writeWL()throws IOException{ 
 		try {
 			File WinLoss = new File("WinLoss.txt");
@@ -48,7 +63,11 @@ public class HangmanClass {
 		}//ends catch 	
 	}//end writeWL method
 	
+	/**
+	 * playGame method writes the game loop implementing the methods to play HANGMAN!
+	 */
 	public void playGame(){
+		Lives = 5;
 		Dictionary Dict = new Dictionary();
 		Dict.readFile("WordFile.txt");
 		currentWord = Dict.chooseWord();
